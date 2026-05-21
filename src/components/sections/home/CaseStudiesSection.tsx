@@ -14,32 +14,31 @@ export function CaseStudiesSection() {
         />
       </Reveal>
 
-      <div className="mt-12 space-y-6">
+      <div className="mt-14 space-y-12">
         {caseStudies.map((study, index) => (
           <Reveal key={study.title} delay={index * 0.08}>
-            <article className="rounded-3xl border border-white/12 bg-white/[0.03] p-7 md:p-10">
-              <h3 className="text-3xl font-semibold text-white">{study.title}</h3>
-              <div className="mt-7 grid gap-6 md:grid-cols-3">
+            <article className="space-y-5">
+              <h3 className="text-4xl text-main md:text-5xl">{study.title}</h3>
+              <div className="grid gap-6 md:grid-cols-3">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-white/50">Challenge</p>
-                  <p className="mt-2 text-sm text-white/75">{study.challenge}</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-dim">Challenge</p>
+                  <p className="mt-2 text-sm text-soft">{study.challenge}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-white/50">Process</p>
-                  <p className="mt-2 text-sm text-white/75">{study.process}</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-dim">Process</p>
+                  <p className="mt-2 text-sm text-soft">{study.process}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-white/50">Final Output</p>
-                  <p className="mt-2 text-sm text-white/75">{study.outcome}</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-dim">Final Output</p>
+                  <p className="mt-2 text-sm text-soft">{study.outcome}</p>
                 </div>
               </div>
-              <div className="mt-7 flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.16em] text-dim">
                 {study.results.map((result) => (
-                  <span key={result} className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/85">
-                    {result}
-                  </span>
+                  <span key={result}>{result}</span>
                 ))}
               </div>
+              {index < caseStudies.length - 1 ? <div className="ambient-divider" /> : null}
             </article>
           </Reveal>
         ))}

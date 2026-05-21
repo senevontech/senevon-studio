@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Image from "next/image";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { MagneticButton } from "@/components/sections/ui/MagneticButton";
 import { PageHero } from "@/components/shared/PageHero";
@@ -19,63 +20,71 @@ export default function ContactPage() {
       />
 
       <SectionShell className="pt-8">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <form className="space-y-4 rounded-3xl border border-white/15 bg-white/[0.03] p-6 md:p-8">
+        <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+          <form className="space-y-8">
             <div>
-              <label className="mb-2 block text-xs uppercase tracking-[0.18em] text-white/60" htmlFor="name">
+              <label className="mb-2 block text-xs uppercase tracking-[0.2em] text-dim" htmlFor="name">
                 Name
               </label>
               <input
                 id="name"
                 name="name"
-                className="w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white outline-none ring-[#00A8FF] transition focus:ring-2"
+                className="w-full border-b border-[var(--line)] bg-transparent px-0 py-3 text-base text-main outline-none placeholder:text-soft focus:border-[var(--accent-1)]"
                 placeholder="Your full name"
               />
             </div>
             <div>
-              <label className="mb-2 block text-xs uppercase tracking-[0.18em] text-white/60" htmlFor="email">
+              <label className="mb-2 block text-xs uppercase tracking-[0.2em] text-dim" htmlFor="email">
                 Email
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
-                className="w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white outline-none ring-[#00A8FF] transition focus:ring-2"
+                className="w-full border-b border-[var(--line)] bg-transparent px-0 py-3 text-base text-main outline-none placeholder:text-soft focus:border-[var(--accent-1)]"
                 placeholder="you@company.com"
               />
             </div>
             <div>
-              <label className="mb-2 block text-xs uppercase tracking-[0.18em] text-white/60" htmlFor="scope">
+              <label className="mb-2 block text-xs uppercase tracking-[0.2em] text-dim" htmlFor="scope">
                 Project Type
               </label>
               <input
                 id="scope"
                 name="scope"
-                className="w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white outline-none ring-[#00A8FF] transition focus:ring-2"
+                className="w-full border-b border-[var(--line)] bg-transparent px-0 py-3 text-base text-main outline-none placeholder:text-soft focus:border-[var(--accent-1)]"
                 placeholder="Game Development / Branding / UI/UX / Motion"
               />
             </div>
             <div>
-              <label className="mb-2 block text-xs uppercase tracking-[0.18em] text-white/60" htmlFor="message">
+              <label className="mb-2 block text-xs uppercase tracking-[0.2em] text-dim" htmlFor="message">
                 Brief
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={5}
-                className="w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white outline-none ring-[#00A8FF] transition focus:ring-2"
+                className="w-full border-b border-[var(--line)] bg-transparent px-0 py-3 text-base text-main outline-none placeholder:text-soft focus:border-[var(--accent-1)]"
                 placeholder="Tell us about goals, timelines, and desired outcomes"
               />
             </div>
             <MagneticButton href="#">Send Inquiry</MagneticButton>
           </form>
 
-          <aside className="space-y-4 rounded-3xl border border-white/15 bg-white/[0.03] p-6 md:p-8">
-            <h2 className="text-2xl font-semibold text-white">Studio Contact</h2>
-            <p className="text-sm text-white/70">hello@snvstudio.com</p>
-            <p className="text-sm text-white/70">+1 (415) 555-0139</p>
-            <p className="text-sm text-white/70">San Francisco, California</p>
-            <div className="mt-8 h-64 rounded-2xl border border-white/10 bg-gradient-to-br from-[#00A8FF]/20 via-[#6A00FF]/15 to-transparent" />
+          <aside className="space-y-5">
+            <h2 className="text-3xl text-main md:text-4xl">Studio Contact</h2>
+            <p className="text-base text-soft">hello@snvstudio.com</p>
+            <p className="text-base text-soft">+1 (415) 555-0139</p>
+            <p className="text-base text-soft">San Francisco, California</p>
+            <div className="relative h-64 overflow-hidden rounded-3xl">
+              <Image
+                src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1400"
+                alt="Creative studio workspace"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </div>
           </aside>
         </div>
       </SectionShell>

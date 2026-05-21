@@ -7,14 +7,14 @@ import { defaultMeta } from "@/lib/site-data";
 import "./globals.css";
 
 const displayFont = localFont({
-  src: "../assets/fonts/Alef-Bold.ttf",
-  variable: "--font-agency",
+  src: "../../public/fonts/ITCAvantGarde.otf",
+  variable: "--font-itc-avant-garde",
   display: "swap",
 });
 
 const bodyFont = localFont({
-  src: "../assets/fonts/Alef-Regular.ttf",
-  variable: "--font-alef",
+  src: "../../public/fonts/rounded.otf",
+  variable: "--font-rounded",
   display: "swap",
 });
 

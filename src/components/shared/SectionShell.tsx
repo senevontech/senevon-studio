@@ -10,14 +10,7 @@ type SectionShellProps = {
 
 export function SectionShell({ id, className, children, light = false }: SectionShellProps) {
   return (
-    <section
-      id={id}
-      className={cn(
-        "relative py-20 md:py-28",
-        light ? "bg-zinc-100 text-zinc-900" : "bg-transparent text-white",
-        className,
-      )}
-    >
+    <section id={id} className={cn("relative py-20 md:py-28", light ? "theme-section-light" : "bg-transparent", className)}>
       <div className="mx-auto w-full max-w-7xl px-6 md:px-10">{children}</div>
     </section>
   );

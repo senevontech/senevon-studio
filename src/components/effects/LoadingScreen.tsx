@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -7,7 +7,7 @@ export function LoadingScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setVisible(false), 1300);
+    const timer = window.setTimeout(() => setVisible(false), 1200);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -15,22 +15,19 @@ export function LoadingScreen() {
     <AnimatePresence>
       {visible ? (
         <motion.div
-          className="fixed inset-0 z-[130] grid place-items-center bg-[#07070a]"
+          className="fixed inset-0 z-[140] grid place-items-center bg-[#f6f1e9]"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.6, ease: "easeOut" } }}
+          exit={{ opacity: 0, transition: { duration: 0.55, ease: "easeOut" } }}
         >
           <div className="space-y-4 text-center">
-            <motion.div
-              className="mx-auto h-[2px] w-56 overflow-hidden rounded-full bg-white/15"
-              initial={false}
-            >
+            <motion.div className="mx-auto h-[2px] w-56 overflow-hidden bg-black/15" initial={false}>
               <motion.span
-                className="block h-full w-20 bg-gradient-to-r from-[#00A8FF] to-[#6A00FF]"
-                animate={{ x: [0, 180, 0] }}
-                transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
+                className="block h-full w-20 bg-[linear-gradient(90deg,#2BA84A,#0057FF,#D7263D)]"
+                animate={{ x: [0, 176, 0] }}
+                transition={{ duration: 1.1, repeat: Infinity, ease: "easeInOut" }}
               />
             </motion.div>
-            <p className="text-xs uppercase tracking-[0.4em] text-white/60">Loading Experience</p>
+            <p className="text-[10px] uppercase tracking-[0.35em] text-black/66">Loading Motion System</p>
           </div>
         </motion.div>
       ) : null}

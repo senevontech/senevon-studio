@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,19 +18,19 @@ export function FeaturedProjectsSection() {
     const container = trackRef.current;
     if (!container) return;
 
-    const cards = container.querySelectorAll("[data-project-card]");
+    const items = container.querySelectorAll("[data-project-item]");
     const animation = gsap.fromTo(
-      cards,
-      { y: 80, opacity: 0 },
+      items,
+      { y: 70, opacity: 0 },
       {
         y: 0,
         opacity: 1,
         duration: 1,
-        stagger: 0.16,
+        stagger: 0.12,
         ease: "power3.out",
         scrollTrigger: {
           trigger: container,
-          start: "top 75%",
+          start: "top 78%",
         },
       },
     );
@@ -50,27 +51,27 @@ export function FeaturedProjectsSection() {
         />
       </Reveal>
 
-      <div ref={trackRef} className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
-        {featuredProjects.map((project) => (
-          <article
-            key={project.title}
-            data-project-card
-            className="group relative min-w-[84vw] snap-center overflow-hidden rounded-3xl border border-white/15 bg-[#111218] p-7 md:min-w-[420px]"
-          >
-            <div className={`absolute inset-0 bg-gradient-to-br ${project.image}`} />
-            <div className="relative space-y-5">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/60">{project.category}</p>
-              <h3 className="text-3xl font-semibold leading-tight text-white">{project.title}</h3>
-              <p className="text-sm text-white/70">{project.description}</p>
-              <div className="flex flex-wrap gap-2 text-xs text-white/70">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full border border-white/20 px-3 py-1">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="pt-8 text-xs uppercase tracking-[0.18em] text-white/85">Hover Preview</div>
+      <div ref={trackRef} className="mt-14 space-y-10">
+        {featuredProjects.map((project, idx) => (
+          <article key={project.title} data-project-item className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.24em] text-dim">{project.category}</p>
+            <h3 className="text-4xl text-main md:text-6xl">{project.title}</h3>
+            <p className="max-w-3xl text-base text-soft md:text-lg">{project.description}</p>
+            <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.16em] text-dim">
+              {project.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
             </div>
+            <div className="relative h-44 w-full overflow-hidden rounded-3xl md:h-56">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 1200px"
+              />
+            </div>
+            {idx < featuredProjects.length - 1 ? <div className="ambient-divider" /> : null}
           </article>
         ))}
       </div>

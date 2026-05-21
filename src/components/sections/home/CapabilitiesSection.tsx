@@ -14,13 +14,13 @@ export function CapabilitiesSection() {
         />
       </Reveal>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-14 grid gap-x-8 gap-y-10 md:grid-cols-2 xl:grid-cols-3">
         {capabilities.map((capability, index) => (
           <Reveal key={capability.title} delay={index * 0.05}>
-            <article className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition hover:border-white/30 hover:bg-white/[0.06]">
-              <p className="text-xs uppercase tracking-[0.18em] text-white/55">{capability.metric}</p>
-              <h3 className="mt-4 text-2xl font-semibold text-white">{capability.title}</h3>
-              <p className="mt-3 text-sm text-white/70">{capability.description}</p>
+            <article className="space-y-3">
+              <p className="text-xs uppercase tracking-[0.2em] text-dim">{capability.metric}</p>
+              <h3 className="text-3xl text-main">{capability.title}</h3>
+              <p className="text-sm leading-relaxed text-soft">{capability.description}</p>
             </article>
           </Reveal>
         ))}

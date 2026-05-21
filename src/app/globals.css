@@ -1,20 +1,36 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
-:root {
-  --background: #07070a;
-  --foreground: #f4f6ff;
+:root,
+html[data-theme="light"] {
+  --bg: #f6f1e9;
+  --fg: #090909;
+  --muted: rgba(9, 9, 9, 0.62);
+  --soft: rgba(9, 9, 9, 0.74);
+  --line: rgba(9, 9, 9, 0.12);
+  --accent-1: #2ba84a;
+  --accent-2: #0057ff;
+  --accent-3: #d7263d;
+}
+
+html[data-theme="dark"] {
+  --bg: #060606;
+  --fg: #f3f3f3;
+  --muted: rgba(243, 243, 243, 0.64);
+  --soft: rgba(243, 243, 243, 0.78);
+  --line: rgba(255, 255, 255, 0.18);
+  --accent-1: #ff6a00;
+  --accent-2: #ffc38f;
+  --accent-3: #ff9b62;
 }
 
 @theme inline {
-  --font-sans: var(--font-alef);
-  --font-display: var(--font-agency);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --font-sans: var(--font-rounded);
+  --font-display: var(--font-itc-avant-garde);
 }
 
 * {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--line);
 }
 
 html,
@@ -27,11 +43,14 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-alef), sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-rounded), sans-serif;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 420ms ease, color 420ms ease;
 }
 
 h1,
@@ -40,13 +59,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-agency), sans-serif;
-  letter-spacing: 0.02em;
+  font-family: var(--font-itc-avant-garde), sans-serif;
+  letter-spacing: 0.01em;
 }
 
 ::selection {
-  background: rgba(0, 168, 255, 0.36);
-  color: #fff;
+  background: var(--accent-2);
+  color: #ffffff;
 }
 
 a,
@@ -59,4 +78,61 @@ button {
   button {
     cursor: pointer;
   }
+}
+
+.text-main {
+  color: var(--fg);
+}
+
+.text-dim {
+  color: var(--muted);
+}
+
+.text-soft {
+  color: var(--soft);
+}
+
+.text-accent {
+  color: var(--accent-1);
+}
+
+.theme-line {
+  background-color: var(--line);
+}
+
+.theme-section-light {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.ambient-divider {
+  height: 1px;
+  width: 100%;
+  background: var(--line);
+}
+
+.reveal-heading {
+  animation: headingReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes headingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    letter-spacing: 0.04em;
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0.01em;
+    filter: blur(0);
+  }
+}
+
+.bg-main-cream {
+  background-color: var(--bg);
+}
+
+.text-main-ink {
+  color: var(--fg);
 }

@@ -27,19 +27,19 @@ export function TestimonialsSection() {
         description="A rotating set of client signals from game teams, product leaders, and brand directors."
       />
 
-      <div className="mt-10 max-w-4xl">
+      <div className="mt-10 max-w-5xl">
         <AnimatePresence mode="wait">
           <motion.article
             key={item.author}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="rounded-3xl border border-white/15 bg-white/[0.04] p-8 backdrop-blur-xl"
+            className="space-y-6"
           >
-            <p className="text-2xl leading-relaxed text-white md:text-3xl">“{item.quote}”</p>
-            <div className="mt-7">
-              <p className="text-sm font-semibold uppercase tracking-[0.12em] text-white">{item.author}</p>
-              <p className="text-sm text-white/65">{item.role}</p>
+            <p className="text-3xl leading-tight text-main md:text-5xl">“{item.quote}”</p>
+            <div>
+              <p className="text-sm uppercase tracking-[0.14em] text-main">{item.author}</p>
+              <p className="text-sm text-soft">{item.role}</p>
             </div>
           </motion.article>
         </AnimatePresence>

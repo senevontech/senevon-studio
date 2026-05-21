@@ -18,12 +18,12 @@ function Orb() {
     <Float speed={2} rotationIntensity={1} floatIntensity={1.8}>
       <Sphere ref={ref} args={[1.25, 96, 96]} position={[0, 0.1, 0]}>
         <MeshDistortMaterial
-          color="#7e89ff"
+          color="#8f9dff"
           distort={0.38}
           speed={2.2}
           roughness={0.06}
           metalness={0.72}
-          emissive="#1d33aa"
+          emissive="#3f44ab"
           emissiveIntensity={0.8}
         />
       </Sphere>
@@ -34,12 +34,11 @@ function Orb() {
 export function HeroOrb() {
   return (
     <div className="absolute inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 4], fov: 48 }}>
-        <color attach="background" args={["#050509"]} />
-        <fog attach="fog" args={["#050509", 3, 8]} />
+      <Canvas camera={{ position: [0, 0, 4], fov: 48 }} gl={{ alpha: true }}>
+        <fog attach="fog" args={["#0d0d14", 4, 10]} />
         <ambientLight intensity={0.8} />
-        <directionalLight position={[2, 2, 3]} intensity={1.2} color="#88a0ff" />
-        <pointLight position={[-2, -2, 1]} intensity={1} color="#00A8FF" />
+        <directionalLight position={[2, 2, 3]} intensity={1.2} color="#95a8ff" />
+        <pointLight position={[-2, -2, 1]} intensity={1} color="#8f9dff" />
         <Stars radius={30} depth={24} count={1200} factor={1.4} fade speed={0.6} />
         <Orb />
       </Canvas>

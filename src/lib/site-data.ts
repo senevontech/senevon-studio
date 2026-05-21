@@ -25,6 +25,7 @@ export type Game = {
   status: string;
   engine: string;
   trailer: string;
+  image: string;
 };
 
 export type PortfolioItem = {
@@ -64,21 +65,21 @@ export const featuredProjects: Project[] = [
     title: "NEON FRONTIER",
     category: "Game Development",
     description: "A tactical sci-fi action world with dynamic weather and cinematic gameplay loops.",
-    image: "from-[#00A8FF]/20 via-[#6A00FF]/20 to-transparent",
+    image: "https://source.unsplash.com/1600x1000/?cyberpunk,game",
     tags: ["Unreal Engine 5", "Multiplayer", "Live Ops"],
   },
   {
     title: "ORBIT BRAND SYSTEM",
     category: "Branding",
     description: "A full identity and campaign language for a next-gen gaming hardware startup.",
-    image: "from-[#6A00FF]/20 via-[#00A8FF]/20 to-transparent",
+    image: "https://source.unsplash.com/1600x1000/?branding,design,studio",
     tags: ["Brand Strategy", "Visual System", "3D Key Visuals"],
   },
   {
     title: "VOID RUNNER",
     category: "Motion + UI/UX",
     description: "Cinematic game launcher UX with motion-first flows and ultra-fast interaction states.",
-    image: "from-white/20 via-[#00A8FF]/10 to-transparent",
+    image: "https://source.unsplash.com/1600x1000/?ui,ux,dashboard",
     tags: ["UX", "Framer Motion", "Design System"],
   },
 ];
@@ -129,6 +130,7 @@ export const games: Game[] = [
     status: "In Production",
     engine: "Unreal Engine 5",
     trailer: "Trailer Preview",
+    image: "https://source.unsplash.com/1600x1000/?fantasy,warrior,game",
   },
   {
     name: "Prism Drift",
@@ -137,6 +139,7 @@ export const games: Game[] = [
     status: "Alpha",
     engine: "Unity HDRP",
     trailer: "Gameplay Teaser",
+    image: "https://source.unsplash.com/1600x1000/?racing,neon,car",
   },
   {
     name: "Helix Siege",
@@ -145,6 +148,7 @@ export const games: Game[] = [
     status: "Pre-Launch",
     engine: "Unreal Engine 5",
     trailer: "Cinematic Cut",
+    image: "https://source.unsplash.com/1600x1000/?shooter,action,game",
   },
   {
     name: "Mythline",
@@ -153,19 +157,20 @@ export const games: Game[] = [
     status: "Concept + Vertical Slice",
     engine: "Godot",
     trailer: "Mood Trailer",
+    image: "https://source.unsplash.com/1600x1000/?adventure,landscape,cinematic",
   },
 ];
 
 export const portfolioItems: PortfolioItem[] = [
-  { title: "AURORA IDENTITY", category: "Branding", image: "from-[#00A8FF]/35 to-transparent" },
-  { title: "GRID ZERO LOGO", category: "Logos", image: "from-[#6A00FF]/35 to-transparent" },
-  { title: "NIGHTRUN POSTER", category: "Posters", image: "from-white/30 to-transparent" },
-  { title: "MIRAGE INTERIOR", category: "Interior", image: "from-[#00A8FF]/25 to-transparent" },
-  { title: "NEON SOCIAL KIT", category: "Social Media", image: "from-[#6A00FF]/30 to-transparent" },
-  { title: "ECHO MOTION PACK", category: "Motion Graphics", image: "from-white/25 to-transparent" },
-  { title: "FORGE 3D ICONS", category: "3D", image: "from-[#00A8FF]/35 to-transparent" },
-  { title: "KINETIC BRAND FILM", category: "Motion Graphics", image: "from-[#6A00FF]/35 to-transparent" },
-  { title: "NOVA LOGO SYSTEM", category: "Logos", image: "from-white/30 to-transparent" },
+  { title: "AURORA IDENTITY", category: "Branding", image: "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "GRID ZERO LOGO", category: "Logos", image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "NIGHTRUN POSTER", category: "Posters", image: "https://images.pexels.com/photos/7233122/pexels-photo-7233122.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "MIRAGE INTERIOR", category: "Interior", image: "https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "NEON SOCIAL KIT", category: "Social Media", image: "https://images.pexels.com/photos/6804073/pexels-photo-6804073.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "ECHO MOTION PACK", category: "Motion Graphics", image: "https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "FORGE 3D ICONS", category: "3D", image: "https://images.pexels.com/photos/7567434/pexels-photo-7567434.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "KINETIC BRAND FILM", category: "Motion Graphics", image: "https://images.pexels.com/photos/3062542/pexels-photo-3062542.jpeg?auto=compress&cs=tinysrgb&w=1200" },
+  { title: "NOVA LOGO SYSTEM", category: "Logos", image: "https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg?auto=compress&cs=tinysrgb&w=1200" },
 ];
 
 export const caseStudies: CaseStudy[] = [

@@ -1,48 +1,54 @@
-﻿"use client";
+"use client";
 
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { navItems, studioName } from "@/lib/site-data";
-import { cn } from "@/lib/utils";
+import { navItems } from "@/lib/site-data";
+import { useTheme } from "@/components/providers/ThemeProvider";
 
 export function Navbar() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
+  const isHome = pathname === "/";
+  const ink = isHome ? (theme === "light" ? "text-black" : "text-white") : "text-black";
+  const panelBg = theme === "light" ? "bg-white/85" : "bg-black/80";
+  const panelText = theme === "light" ? "text-black" : "text-white";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100]">
-      <div className="mx-auto mt-4 w-[min(1120px,calc(100%-2rem))] rounded-2xl border border-white/15 bg-[#0a0a0d]/75 px-4 py-3 backdrop-blur-xl md:px-6">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="text-sm font-semibold uppercase tracking-[0.24em] text-white/90">
-            {studioName}
-          </Link>
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-[140] px-6 pt-5 md:px-12">
+      <div className="pointer-events-auto flex items-start justify-between gap-4">
+        <Link href="/" className={`inline-flex items-center gap-2 ${ink}`} data-cursor data-cursor-label="Home">
+          <span className="grid h-11 w-11 place-items-center border-2 border-[#ff6a00] bg-[#ff5d22] text-[28px] font-black leading-none text-black">S</span>
+          <span className="leading-[0.94]">
+            <span className="block text-[30px] font-black uppercase tracking-[-0.035em] md:text-[34px]">SENEVON</span>
+            <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] md:text-xs">Studio</span>
+          </span>
+        </Link>
 
-          <nav className="hidden items-center gap-2 md:flex">
-            {navItems.map((item) => {
-              const active = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "rounded-full px-3 py-2 text-xs uppercase tracking-[0.18em] transition",
-                    active ? "bg-white text-black" : "text-white/65 hover:bg-white/10 hover:text-white",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+        <div className="flex items-start gap-2">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className={`mt-1 h-5 w-9 rounded-full border transition-colors ${theme === "light" ? "border-black/25 bg-black/10" : "border-white/35 bg-white/12"}`}
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <span
+              className={`block h-3 w-3 rounded-full transition-transform ${theme === "light" ? "translate-x-1 bg-black" : "translate-x-4 bg-white"}`}
+            />
+          </button>
 
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="rounded-full border border-white/20 px-3 py-2 text-xs uppercase tracking-[0.16em] text-white md:hidden"
+            className="grid h-14 w-14 place-items-center bg-[#ff6a00] text-[54px] leading-none text-white"
+            data-cursor
+            data-cursor-label="Menu"
+            aria-label="Menu"
           >
-            Menu
+            M
           </button>
         </div>
       </div>
@@ -53,23 +59,18 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="mx-auto mt-2 w-[min(1120px,calc(100%-2rem))] rounded-2xl border border-white/15 bg-[#0a0a0d]/95 p-3 backdrop-blur-xl md:hidden"
+            className={`pointer-events-auto ml-auto mt-3 flex w-[min(320px,100%)] flex-col gap-2 border p-4 backdrop-blur-xl ${panelBg} ${panelText} ${theme === "light" ? "border-black/20" : "border-white/25"}`}
           >
-            <div className="grid gap-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    "rounded-xl px-3 py-2 text-sm text-white/80 transition",
-                    pathname === item.href ? "bg-white text-black" : "hover:bg-white/10",
-                  )}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className={`text-sm font-semibold uppercase tracking-[0.14em] transition-colors ${theme === "light" ? "text-black/80 hover:text-black" : "text-white/80 hover:text-white"}`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </motion.div>
         ) : null}
       </AnimatePresence>

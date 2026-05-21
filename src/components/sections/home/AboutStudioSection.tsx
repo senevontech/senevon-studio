@@ -5,8 +5,8 @@ import { Reveal } from "@/components/sections/ui/Reveal";
 
 export function AboutStudioSection() {
   return (
-    <SectionShell id="about" className="bg-[#0f1016]">
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+    <SectionShell id="about">
+      <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
         <Reveal>
           <SectionIntro
             eyebrow="About Studio"
@@ -16,15 +16,15 @@ export function AboutStudioSection() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-            <p className="text-sm text-white/70">
+          <div className="space-y-8">
+            <p className="text-lg text-soft">
               Our mission is to merge game thinking, brand strategy, and cinematic interaction to produce experiences that hold attention and grow businesses.
             </p>
-            <div className="mt-8 grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-2 gap-x-10 gap-y-7">
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-3xl font-semibold text-white md:text-4xl">{stat.value}</p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-white/50">{stat.label}</p>
+                  <p className="text-4xl text-main md:text-5xl">{stat.value}</p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.22em] text-dim">{stat.label}</p>
                 </div>
               ))}
             </div>
