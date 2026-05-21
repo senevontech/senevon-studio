@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -19,12 +20,8 @@ export function Navbar() {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[140] px-6 pt-5 md:px-12">
       <div className="pointer-events-auto flex items-start justify-between gap-4">
-        <Link href="/" className={`inline-flex items-center gap-2 ${ink}`} data-cursor data-cursor-label="Home">
-          <span className="grid h-11 w-11 place-items-center border-2 border-[#ff6a00] bg-[#ff5d22] text-[28px] font-black leading-none text-black">S</span>
-          <span className="leading-[0.94]">
-            <span className="block text-[30px] font-black uppercase tracking-[-0.035em] md:text-[34px]">SENEVON</span>
-            <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] md:text-xs">Studio</span>
-          </span>
+        <Link href="/" className={`inline-flex items-center ${ink}`} data-cursor data-cursor-label="Home">
+          <Image src="/logo/studio.png" alt="Senevon Studio" width={170} height={46} className="h-11 w-auto" priority />
         </Link>
 
         <div className="flex items-start gap-2">
