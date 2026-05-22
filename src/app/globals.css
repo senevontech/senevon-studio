@@ -110,25 +110,6 @@ button {
   background: var(--line);
 }
 
-.reveal-heading {
-  animation: headingReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes headingReveal {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-    letter-spacing: 0.04em;
-    filter: blur(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: 0.01em;
-    filter: blur(0);
-  }
-}
-
 .bg-main-cream {
   background-color: var(--bg);
 }

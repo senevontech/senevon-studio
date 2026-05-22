@@ -7,6 +7,7 @@ import { DynamicBackground } from "@/components/effects/DynamicBackground";
 import { LoadingScreen } from "@/components/effects/LoadingScreen";
 import { NoiseOverlay } from "@/components/effects/NoiseOverlay";
 import { ScrollProgress } from "@/components/effects/ScrollProgress";
+import { TitleReveal } from "@/components/effects/TitleReveal";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
@@ -17,6 +18,7 @@ function AppProvidersContent({ children }: { children: ReactNode }) {
   return (
     <>
       <SmoothScrollProvider />
+      <TitleReveal />
       <LoadingScreen />
       {!isHome ? <ScrollProgress /> : null}
       {!isHome ? <CustomCursor /> : null}

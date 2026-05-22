@@ -3,12 +3,24 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+const LOADING_COMPLETE_EVENT = "snv:loading-complete";
+
 export function LoadingScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setVisible(false), 1200);
-    return () => window.clearTimeout(timer);
+    document.documentElement.dataset.loadingComplete = "false";
+
+    const hideTimer = window.setTimeout(() => setVisible(false), 1200);
+    const completeTimer = window.setTimeout(() => {
+      document.documentElement.dataset.loadingComplete = "true";
+      window.dispatchEvent(new Event(LOADING_COMPLETE_EVENT));
+    }, 1800);
+
+    return () => {
+      window.clearTimeout(hideTimer);
+      window.clearTimeout(completeTimer);
+    };
   }, []);
 
   return (

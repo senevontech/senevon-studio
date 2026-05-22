@@ -7,13 +7,13 @@ import { defaultMeta } from "@/lib/site-data";
 import "./globals.css";
 
 const displayFont = localFont({
-  src: "../../public/fonts/ITCAvantGarde.otf",
+  src: "../../public/fonts/Azonix.otf",
   variable: "--font-itc-avant-garde",
   display: "swap",
 });
 
 const bodyFont = localFont({
-  src: "../../public/fonts/rounded.otf",
+  src: "../../public/fonts/Azonix.otf",
   variable: "--font-rounded",
   display: "swap",
 });

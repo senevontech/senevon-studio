@@ -13,6 +13,7 @@ export function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const isHome = pathname === "/";
+  const logoSrc = theme === "dark" ? "/logo/logo-white.png" : "/logo/logo-black.png";
   const ink = isHome ? (theme === "light" ? "text-black" : "text-white") : "text-black";
   const panelBg = theme === "light" ? "bg-white/85" : "bg-black/80";
   const panelText = theme === "light" ? "text-black" : "text-white";
@@ -21,7 +22,7 @@ export function Navbar() {
     <header className="pointer-events-none fixed inset-x-0 top-0 z-[140] px-6 pt-5 md:px-12">
       <div className="pointer-events-auto flex items-start justify-between gap-4">
         <Link href="/" className={`inline-flex items-center ${ink}`} data-cursor data-cursor-label="Home">
-          <Image src="/logo/studio.png" alt="Senevon Studio" width={170} height={46} className="h-11 w-auto" priority />
+          <Image src={logoSrc} alt="Senevon Studio" width={340} height={98} className="h-8 w-auto sm:h-9 md:h-10" priority />
         </Link>
 
         <div className="flex items-start gap-2">
@@ -40,7 +41,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="grid h-14 w-14 place-items-center bg-[#ff6a00] text-[54px] leading-none text-white"
+            className="grid h-9 w-9 place-items-center bg-[#ff6a00] text-[28px] leading-none text-white"
             data-cursor
             data-cursor-label="Menu"
             aria-label="Menu"
