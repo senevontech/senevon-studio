@@ -1,0 +1,25 @@
+/* [project]/src/app/displayfont_de1a2317.module.css [app-client] (css) */
+@font-face {
+  font-family: displayFont;
+  src: url("../media/Azonix-s.p.14d4fsjux0dmi.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: displayFont Fallback;
+  src: local(Arial);
+  ascent-override: 48.0%;
+  descent-override: 16.43%;
+  line-gap-override: 0.0%;
+  size-adjust: 156.44%;
+}
+
+.displayfont_de1a2317-module__D2UsqG__className {
+  font-family: displayFont, displayFont Fallback;
+}
+
+.displayfont_de1a2317-module__D2UsqG__variable {
+  --font-itc-avant-garde: "displayFont", "displayFont Fallback";
+}
+
+/*# sourceMappingURL=src_app_displayfont_de1a2317_module_css_0w3-wzy._.single.css.map*/
