@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { HeroReferenceSection } from "@/components/sections/home/HeroReferenceSection";
 import { ScrollVideoSection } from "@/components/sections/home/ScrollVideoSection";
+import { HomeFooter } from "@/components/sections/home/HomeFooter";
 
 export const metadata: Metadata = {
   title: "SNV Studio | Hero",
@@ -13,6 +14,7 @@ export default function HomePage() {
     <PageTransition>
       <HeroReferenceSection />
       <ScrollVideoSection />
+      <HomeFooter />
     </PageTransition>
   );
 }

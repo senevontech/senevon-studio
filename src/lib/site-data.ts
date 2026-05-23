@@ -1,4 +1,4 @@
-﻿
+
 export type NavItem = {
   label: string;
   href: string;
@@ -65,21 +65,21 @@ export const featuredProjects: Project[] = [
     title: "NEON FRONTIER",
     category: "Game Development",
     description: "A tactical sci-fi action world with dynamic weather and cinematic gameplay loops.",
-    image: "https://source.unsplash.com/1600x1000/?cyberpunk,game",
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Unreal Engine 5", "Multiplayer", "Live Ops"],
   },
   {
     title: "ORBIT BRAND SYSTEM",
     category: "Branding",
     description: "A full identity and campaign language for a next-gen gaming hardware startup.",
-    image: "https://source.unsplash.com/1600x1000/?branding,design,studio",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=compress&cs=tinysrgb&w=1200",
     tags: ["Brand Strategy", "Visual System", "3D Key Visuals"],
   },
   {
     title: "VOID RUNNER",
     category: "Motion + UI/UX",
     description: "Cinematic game launcher UX with motion-first flows and ultra-fast interaction states.",
-    image: "https://source.unsplash.com/1600x1000/?ui,ux,dashboard",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=compress&cs=tinysrgb&w=1200",
     tags: ["UX", "Framer Motion", "Design System"],
   },
 ];
@@ -130,7 +130,7 @@ export const games: Game[] = [
     status: "In Production",
     engine: "Unreal Engine 5",
     trailer: "Trailer Preview",
-    image: "https://source.unsplash.com/1600x1000/?fantasy,warrior,game",
+    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=compress&cs=tinysrgb&w=1200",
   },
   {
     name: "Prism Drift",
@@ -139,7 +139,7 @@ export const games: Game[] = [
     status: "Alpha",
     engine: "Unity HDRP",
     trailer: "Gameplay Teaser",
-    image: "https://source.unsplash.com/1600x1000/?racing,neon,car",
+    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=compress&cs=tinysrgb&w=1200",
   },
   {
     name: "Helix Siege",
@@ -148,7 +148,7 @@ export const games: Game[] = [
     status: "Pre-Launch",
     engine: "Unreal Engine 5",
     trailer: "Cinematic Cut",
-    image: "https://source.unsplash.com/1600x1000/?shooter,action,game",
+    image: "https://images.unsplash.com/photo-1553481187-be93c21490a9?auto=compress&cs=tinysrgb&w=1200",
   },
   {
     name: "Mythline",
@@ -157,7 +157,7 @@ export const games: Game[] = [
     status: "Concept + Vertical Slice",
     engine: "Godot",
     trailer: "Mood Trailer",
-    image: "https://source.unsplash.com/1600x1000/?adventure,landscape,cinematic",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=compress&cs=tinysrgb&w=1200",
   },
 ];
 
